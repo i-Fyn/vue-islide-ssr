@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* 基础样式 */
+@import './assets/css/animation.css';
+
+/* 滚动动画相关样式 */
+.scroll-animate {
+  will-change: transform, opacity; /* 提高性能 */
+}
+
+/* 淡入效果 */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* 从下方淡入上升效果 */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* 从上方淡入下降效果 */
+.fade-in-down {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+/* 从左侧淡入效果 */
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+/* 从右侧淡入效果 */
+.fade-in-right {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+/* 缩放淡入效果 */
+.zoom-in {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+/* 定义动画关键帧 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* 优化滚动体验 */
+html {
+  scroll-behavior: smooth; /* 原生平滑滚动 */
+}
+
+/* 提高滚动性能 */
+.optimize-scroll {
+  -webkit-overflow-scrolling: touch; /* 移动端滚动优化 */
+  overflow-scrolling: touch;
+  backface-visibility: hidden; /* 减少闪烁 */
+  transform: translateZ(0); /* 触发硬件加速 */
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base-200, #f7f7f7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-base-300, #e0e0e0);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary, #3490dc);
+}
+
+/* Vant图片懒加载相关样式优化 */
+.van-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.van-image img.van-image__img {
+  transition: opacity 0.3s ease-in-out;
+  will-change: opacity;
+}
+
+/* Vant懒加载加载中状态 */
+.van-image__loading {
+  background-color: var(--color-base-200, #f7f7f7);
+}
+
+/* Vant懒加载完成状态 */
+.loaded, .van-image--loaded {
+  animation: fadeIn 0.3s ease-in-out;
+}
