@@ -6,6 +6,14 @@
 
 vue-islide-ssr是一个完整的内容管理前端解决方案，采用服务端渲染技术，具有卓越的首屏加载速度和SEO友好性。项目支持多种内容类型展示，包括文章、视频、书籍、商品等，并具备用户系统和社交功能。
 
+## 预览
+
+https://theme.laziness.cn/
+
+## 后端
+
+https://github.com/i-Fyn/vue-admin-wordpress
+
 ## 特性
 
 - **服务端渲染(SSR)**: 提升首屏加载速度和搜索引擎优化
